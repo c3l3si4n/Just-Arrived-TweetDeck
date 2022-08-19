@@ -4,12 +4,10 @@ let unSeenTweets = [];
 // Date to timestamp - thanks Stack overflow
 Date.prototype.yyyymmdd = function () {
   var mm = this.getMonth() + 1; // getMonth() is zero-based
-  var dd = this.getDate();
 
   return [
     this.getFullYear(),
-    (mm > 9 ? "" : "0") + mm,
-    (dd > 9 ? "" : "0") + dd,
+    (mm > 9 ? "" : "0") + mm
   ].join("");
 };
 
@@ -25,22 +23,14 @@ chrome.storage.local.get(today, function (store) {
 
 function listTweetIds() {
   let tweets = document.querySelectorAll("article");
-  let reg = new RegExp(/\/*\/status\/(?<tweetId>[0-9]+)/);
-
+  
   tweets.forEach(function (tweet) {
-    let links = tweet.querySelectorAll("a");
-    for (let i = 0; i < links.length; i++) {
-      let href = links[i].getAttribute("href");
-      let matches = href.match(reg);
-      if (!matches) {
-        continue;
-      }
-      if (seenTweets.indexOf(matches.groups.tweetId) !== -1) {
-        tweet.setAttribute("style", "opacity: 50%;");
-      } else if (unSeenTweets.indexOf(matches.groups.tweetId) === -1) {
-        unSeenTweets.push(matches.groups.tweetId);
-      }
-      return;
+    
+    let tweet_id = tweet.getAttribute('data-tweet-id');
+    if (seenTweets.indexOf(tweet_id) !== -1) {
+      tweet.setAttribute("style", "opacity: 40%;");
+    } else if (unSeenTweets.indexOf(tweet_id) === -1) {
+      unSeenTweets.push(tweet_id);
     }
   });
 
@@ -70,6 +60,6 @@ function removeIndicator() {
 }
 
 
-let timer = setInterval(listTweetIds, 2000);
+let timer = setInterval(listTweetIds, 1000);
 showIndicator();
 
