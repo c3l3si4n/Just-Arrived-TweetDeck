@@ -1,9 +1,10 @@
-# Just-Arrived
+# Just-Arrived-TweetDeck
 
-Just Arrived is a simple extension that helps you stop scrolling through the same tweets mindlessly. Infinite scrolling has wasted many hours in our lives and "Just Arrived" tries to save some of that time from ourselves.
+Just Arrived TweetDeck is a simple extension that helps you stop scrolling through the same tweets mindlessly. Infinite scrolling has wasted many hours in our lives and "Just Arrived" tries to save some of that time from ourselves.
 
-Just install the plugin. That's all. Every-time you visit Twitter home page, it records the tweets that you have scrolled through that day and dims it the next time you visit Twitter.
+This extension was adapted from tecoholic/Just-Arrived, for working with TweetDeck. 
 
-No data is harvested, no information ever leaves your browser. Plus it gets cleared everyday.
+Just install the plugin. That's all. Every-time you visit TweetDeck home page, it records the tweets that you have scrolled through the month and dims it the next time you visit Twitter.
 
-[![See in Chrome Webstore](icons/webstore-small.png?raw=true)](https://chrome.google.com/webstore/detail/just-arrived/mdfbpdpipgabflofhlkmehijmfghnimd?hl=en) [![Get Firefox Addon](icons/firefox-get.png?raw=true)](https://addons.mozilla.org/en-GB/firefox/addon/just-arrived-ff/)
+No data is harvested, no information ever leaves your browser. Plus it gets cleared every month.
+
